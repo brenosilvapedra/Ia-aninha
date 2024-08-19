@@ -1,0 +1,55 @@
+:root{
+    --cor-fundo: #01080E;
+    --cor-principal: #0B0D20;
+    --cor-secundaria: #212333;
+    --cor-destaque: rgb(226, 5, 255);
+    --cor-texto: #D7F9FF;
+    --cor-neon: #cc00ff;
+}
+
+body {
+    background-image: url(/jamal\ angolano.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.caixa-principal{
+    background-color: var(--cor-fundo);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 2px var(--cor-neon);
+    border-radius: 15px;
+    border: 2px solid var(--cor-destaque);
+}
+
+h1{
+    color: var(--cor-destaque);
+    text-shadow: 0px 0px 8px var(--cor-destaque);
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px; /* Espaçamento entre os botões */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0px 0px 15px 2px var(--cor-neon);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px 5px var(--cor-neon);
+}
