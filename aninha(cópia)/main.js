@@ -3,6 +3,10 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternaticas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
+const titulo = document.querySelector(".titulo");
+const botaoJogarNovamente = document.querySelector(".novamente-btn");
+const botaoIniciar = document.querySelector(".iniciar-btn");
+const telaInicial = document.querySelector(".tela-inicial");
 
 const resultado1 = document.querySelector(".caixa-resultado1");
 
@@ -60,6 +64,7 @@ function mostraPergunta() {
         return;
     }
     perguntaAtual = perguntas[atual];
+    titulo.textContent = "Quiz";
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternaticas.textContent = "";
     mostraAlternativas();
@@ -82,7 +87,9 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Tá ai";
+
+    titulo.textContent = "Resposta";
+    caixaPerguntas.textContent = "Segundo Jamal";
     textoResultado.textContent = historiaFinal;
     caixaAlternaticas.textContent = "";
 }
