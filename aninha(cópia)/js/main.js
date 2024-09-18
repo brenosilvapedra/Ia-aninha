@@ -17,6 +17,7 @@ const botaoIniciar = document.querySelector(".iniciar-btn");
 const telaInicial = document.querySelector(".tela-inicial");
 const restart = document.querySelector(".btn")
 const ia_main = document.querySelector(".ia_main")
+const back_menu = document.querySelector(".back_menu")
 
 const resultado1 = document.querySelector(".caixa-resultado1");
 
@@ -27,12 +28,19 @@ let historiaFinal = "";
 //func Menu
 
 function Menu_func() {
+
+    ia_main.classList.add("esconder")
+    
     menu_title.textContent = "Você decide o futuro da IA"
+
+
 
     menu_btn.addEventListener('click', () => {
         menu.classList.add("esconder")
         ia_main.classList.remove("esconder")
 
+
+        restart_func()
         mostraPergunta()
     })
 }
@@ -41,6 +49,9 @@ function Menu_func() {
 //Func Ia
 
 function mostraPergunta() {
+
+    ia_main.classList.remove("esconder")
+
     if (atual >= perguntas.length) {
         mostraResultado();
         return;
@@ -76,10 +87,21 @@ function mostraResultado() {
     caixaAlternaticas.textContent = "";
 
     restart.classList.remove("esconder")
+    back_menu.classList.remove("esconder")
 
     restart.addEventListener('click', () => {
         restart_func()
     })
+    back_menu.addEventListener('click', () => {
+        back_menu_func()
+    })
+}
+
+function back_menu_func(){
+    menu.classList.remove("esconder")
+    ia_main.classList.add("esconder")
+
+    back_menu.classList.add("esconder")
 }
 
 function restart_func (){
@@ -87,7 +109,9 @@ function restart_func (){
     historiaFinal = ""
     textoResultado.textContent = ""
 
+    back_menu.classList.add("esconder")
     restart.classList.add("esconder")
+    
     mostraPergunta()
 }
 
