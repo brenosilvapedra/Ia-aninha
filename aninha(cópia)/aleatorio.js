@@ -1,1 +1,0 @@
-const nomes = ["Amdre", "Ravena", "Juliany", "Maria", "Breno", "Claudio", "Mussa"];
